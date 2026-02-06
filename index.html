@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Paushali ❤️</title>
+
+<style>
+@font-face { font-family: PinkRose; src: url("Pink Rose.ttf"); }
+@font-face { font-family: Coolvetica; src: url("Coolvetica Rg.otf"); }
+
+body {
+  margin: 0;
+  background: linear-gradient(180deg,#ffe6ef,#fff);
+  font-family: Coolvetica,-apple-system,BlinkMacSystemFont,
+  "Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+/* ---------------- DOODLES (UPDATED) ---------------- */
+.doodles{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:0;
+  opacity:.35;
+  overflow:hidden;
+}
+.doodle{
+  position:absolute;
+  font-size:34px;
+  user-select:none;
+  animation:doodleFloat 6s ease-in-out infinite;
+  will-change: transform;
+}
+@keyframes doodleFloat{
+  0%{transform:translateY(0) rotate(0deg);}
+  50%{transform:translateY(-10px) rotate(6deg);}
+  100%{transform:translateY(0) rotate(0deg);}
+}
+.d1{color:#ff8fb1;}
+.d2{color:#a78bfa;}
+.d3{color:#60a5fa;}
+.d4{color:#fbbf24;}
+.d5{color:#fb7185;}
+.d6{color:#34d399;}
+/* --------------------------------------------------- */
+
+main { position: relative; z-index: 2; }
+
+section { padding: 40px 20px; }
+h2 { font-family: PinkRose; font-size: 2.2rem; }
+
+img {
+  width: 90%;
+  max-width: 340px;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.15);
+}
+
+/* Carousel */
+.carousel { max-width: 320px; margin: auto; overflow: hidden; touch-action: pan-y; }
+.carousel-track { display: flex; transition: transform .5s ease; }
+.carousel img { width: 320px; }
+
+/* Scratch card */
+.scratch-wrap{
+  position:relative;
+  width:min(340px, 92vw);
+  height:140px;
+  margin:0 auto 6px;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 12px 30px rgba(0,0,0,.14);
+}
+.scratch-reveal{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:14px;
+  text-align:center;
+  font-family: PinkRose;
+  font-size: 1.55rem;
+  line-height: 1.25;
+  color:#ff3b7a;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(255,92,141,.18), transparent 45%),
+    radial-gradient(circle at 80% 30%, rgba(167,139,250,.18), transparent 55%),
+    linear-gradient(180deg,#fff,#fff6fb);
+}
+#scratchCanvas{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  touch-action:none;
+}
+.sparkles{
+  position:relative;
+  height:0;
+  width:0;
+  margin:0 auto;
+  pointer-events:none;
+}
+.sparkle{
+  position:fixed;
+  font-size:18px;
+  animation:sparklePop 1.4s ease-out forwards;
+  z-index:1100;
+}
+@keyframes sparklePop{
+  0%{ transform:translateY(0) scale(.4); opacity:0; }
+  15%{ opacity:1; }
+  100%{ transform:translateY(-55px) scale(1.15); opacity:0; filter:blur(1px); }
+}
+
+/* Vinyl */
+.vinyl-wrap {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:12px;
+}
+.vinyl {
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  background:
+    radial-gradient(circle at center,#111 20%,#000 55%,#222 60%,#000 100%);
+  position:relative;
+}
+.vinyl::after {
+  content:"";
+  position:absolute;
+  width:18px;
+  height:18px;
+  background:#ff5c8d;
+  border-radius:50%;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+}
+.spin { animation:spin 3s linear infinite; }
+@keyframes spin { to { transform:rotate(360deg); } }
+
+/* Proposal */
+.buttons { position: relative; height: 120px; margin-top: 25px; }
+button {
+  font-size: 1.2rem;
+  padding: 12px 22px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+}
+#yesBtn { background:#ff5c8d; color:white; transition: transform .3s ease; }
+#noBtn {
+  background:#ddd;
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+}
+
+.heart { font-size:4rem; animation:pulse 1s infinite; }
+@keyframes pulse { 50% { transform:scale(1.2); } }
+
+#teaseText { margin-top:10px; color:#ff5c8d; opacity:0; }
+
+/* Envelope */
+#envelopeWrap { display:inline-block; cursor:pointer; position:relative; }
+#envelope { font-size:4rem; animation:float 2s ease-in-out infinite; }
+@keyframes float { 50%{ transform:translateY(-6px); } }
+
+#seal {
+  position:absolute;
+  top:-12px;
+  left:50%;
+  transform:translateX(-50%);
+  transition:.6s;
+}
+#seal.open { transform:translateX(-50%) scale(0); opacity:0; }
+
+#letter {
+  max-width:320px;
+  margin:18px auto 0;
+  padding:22px;
+  border-radius:16px;
+  font-family:PinkRose;
+  font-size:1.25rem;
+  line-height:1.7;
+  background:repeating-linear-gradient(#fffdf6,#fffdf6 24px,#f2eee7 25px);
+  box-shadow:0 12px 30px rgba(0,0,0,.18);
+  opacity:0;
+  transform:translateY(-25px);
+  transition:.6s;
+  display:none;
+}
+#letter.show { display:block; opacity:1; transform:translateY(0); }
+#letterText { white-space:pre-wrap; }
+
+/* Popup */
+#popup {
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.6);
+  justify-content:center;
+  align-items:center;
+  z-index:1000;
+}
+.popup-box {
+  background:white;
+  padding:24px;
+  border-radius:20px;
+  max-width:90%;
+}
+.popup-box p { white-space:pre-wrap; line-height:1.6; }
+
+/* Falling emojis */
+.fall {
+  position:fixed;
+  top:-10%;
+  font-size:24px;
+  animation:fall linear forwards;
+  z-index:999;
+}
+@keyframes fall { to{ transform:translateY(100vh); } }
+
+/* Heart dust */
+.dust {
+  position:fixed;
+  bottom:0;
+  font-size:12px;
+  animation:dust 2.5s ease-out forwards;
+}
+@keyframes dust {
+  0% { opacity:0; transform:translateY(0) scale(1); }
+  20% { opacity:1; }
+  100% {
+    opacity:0;
+    transform:translateY(-40px) scale(0.3);
+    filter:blur(2px);
+  }
+}
+
+/* Floating hearts while voice note plays */
+.audio-hearts{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:998;
+}
+.audio-heart{
+  position:fixed;
+  bottom:-20px;
+  font-size:16px;
+  animation:audioHeartFloat linear forwards;
+  opacity:0.95;
+}
+@keyframes audioHeartFloat{
+  0%{ transform:translateY(0) scale(0.9); opacity:0; }
+  10%{ opacity:1; }
+  100%{ transform:translateY(-110vh) scale(1.2); opacity:0; filter:blur(1px); }
+}
+</style>
+</head>
+
+<body>
+
+<!-- DOODLES LAYER -->
+<div class="doodles" id="doodles"></div>
+
+<main>
+<section>
+  <h2>Where it all started 😗</h2>
+  <img src="WhatsApp Image 2026-01-31 at 20.59.25.jpeg">
+  <div id="timer"></div>
+</section>
+
+<section>
+  <h2>Our 1st Date</h2>
+  <div class="carousel" id="dateCarousel">
+    <div class="carousel-track" id="track">
+      <img src="WhatsApp Image 2026-01-31 at 23.09.48.jpeg">
+      <img src="WhatsApp Image 2026-01-31 at 23.09.48 (1).jpeg">
+    </div>
+  </div>
+</section>
+
+<!-- MEME CAROUSEL -->
+<section>
+  <h2>Some handpicked memes :3</h2>
+  <div class="carousel" id="memeCarousel">
+    <div class="carousel-track" id="memeTrack">
+      <img src="meme1.jpg" alt="Meme 1">
+      <img src="meme2.jpg" alt="Meme 2">
+      <img src="meme3.jpg" alt="Meme 3">
+      <img src="meme4.jpg" alt="Meme 4">
+      <img src="meme5.jpg" alt="Meme 5">
+      <img src="meme6.jpg" alt="Meme 6">
+    </div>
+  </div>
+</section>
+
+<!-- SCRATCH CARD COUPON -->
+<section id="scratchSection">
+  <h2 style="margin-bottom:10px;">So how much do I love you 💘</h2>
+
+  <div class="scratch-wrap">
+    <div class="scratch-reveal" id="scratchReveal">
+      ONEK ONEKKKKKKKKKKKKKK ONEKKKKKKKKKK BESHI
+    </div>
+    <canvas id="scratchCanvas" width="340" height="140" aria-label="Scratch card"></canvas>
+  </div>
+
+  <div id="scratchSparkles" class="sparkles"></div>
+</section>
+
+<!-- PLAYLIST -->
+<section>
+  <p style="font-size:1.1rem;">Songs that remind me of you 🎶💗</p>
+
+  <div class="vinyl-wrap">
+    <div class="vinyl" id="vinyl"></div>
+    <iframe
+      id="spotify"
+      style="border-radius:14px"
+      src="https://open.spotify.com/embed/playlist/32ynt9NBKhiEdVsdSlfW0Z"
+      width="100%"
+      height="152"
+      frameborder="0"
+      allow="encrypted-media"
+      loading="lazy">
+    </iframe>
+  </div>
+
+  <p style="font-size:0.95rem; margin-top:14px; opacity:0.85;">
+    hit the play button and read the first letter of each song 🎶  
+    <br>
+    click on the 3 dots to save the playlist for later bebi 🥰
+  </p>
+</section>
+
+<section>
+  <div id="envelopeWrap">
+    <div id="seal">💖</div>
+    <div id="envelope">💌</div>
+  </div>
+  <p>Secret Message For You</p>
+  <div id="letter"><div id="letterText"></div></div>
+</section>
+
+<!-- VOICE NOTE SECTION -->
+<section id="voiceNote">
+  <h2>Something for you &lt;3</h2>
+
+  <p style="margin:10px 0 16px; opacity:0.85;">
+    I recorded this just for you 🥺🎙️
+  </p>
+
+  <div style="max-width:340px; margin:0 auto;">
+    <audio controls style="width:100%; border-radius:14px;">
+      <source src="voicenote.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+</section>
+
+<section id="proposal">
+  <h2>Will you be my Valentine, Paushali? 💖</h2>
+  <div class="heart">❤️</div>
+  <div class="buttons" id="buttonArea">
+    <button id="yesBtn">YES</button>
+    <button id="noBtn">NO</button>
+  </div>
+  <div id="teaseText">Just say yes already 😤💖</div>
+</section>
+</main>
+
+<div id="popup">
+  <div class="popup-box">
+    <p id="popupText"></p>
+    <button id="closePopup"></button>
+  </div>
+</div>
+
+<!-- Hearts layer -->
+<div class="audio-hearts" id="audioHearts"></div>
+
+<script>
+/* Timer */
+const start=new Date("2025-08-23T00:00:00");
+setInterval(()=>{
+  const d=new Date()-start;
+  timer.textContent=
+  `${Math.floor(d/86400000)} days ${Math.floor(d/3600000)%24}h ${Math.floor(d/60000)%60}m ${Math.floor(d/1000)%60}s together 💞`;
+},1000);
+
+/* Date Carousel Auto */
+let idx=0;
+setInterval(()=>{
+  idx=(idx+1)%2;
+  track.style.transform=`translateX(-${idx*320}px)`;
+},5000);
+
+/* Meme Carousel Auto */
+let memeIdx=0;
+setInterval(()=>{
+  memeIdx=(memeIdx+1)%6;
+  memeTrack.style.transform=`translateX(-${memeIdx*320}px)`;
+},5000);
+
+/* Swipe helper */
+function enableSwipe(carouselEl, trackEl, count){
+  let startX=0, current=0, isDown=false;
+
+  carouselEl.addEventListener("touchstart",(e)=>{
+    startX=e.touches[0].clientX;
+    isDown=true;
+  },{passive:true});
+
+  carouselEl.addEventListener("touchend",(e)=>{
+    if(!isDown) return;
+    isDown=false;
+    const endX=e.changedTouches[0].clientX;
+    const diff=endX-startX;
+
+    if(Math.abs(diff)<40) return;
+
+    if(diff<0) current=Math.min(count-1, current+1);
+    else current=Math.max(0, current-1);
+
+    trackEl.style.transform=`translateX(-${current*320}px)`;
+
+    if(trackEl.id==="memeTrack") memeIdx=current;
+    if(trackEl.id==="track") idx=current;
+  });
+}
+
+enableSwipe(document.getElementById("dateCarousel"), document.getElementById("track"), 2);
+enableSwipe(document.getElementById("memeCarousel"), document.getElementById("memeTrack"), 6);
+
+/* Vinyl spin */
+spotify.addEventListener("click",()=>vinyl.classList.add("spin"));
+
+/* NO button logic */
+let noCount=0, yesScale=1;
+noBtn.onmouseenter=noBtn.onclick=noBtn.ontouchstart=()=>{
+  noCount++;
+  const a=buttonArea.getBoundingClientRect(), b=noBtn.getBoundingClientRect();
+  noBtn.style.left=Math.random()*(a.width-b.width)+"px";
+  noBtn.style.top=Math.random()*(a.height-b.height)+"px";
+  yesScale+=0.12;
+  yesBtn.style.transform=`scale(${yesScale})`;
+  if(noCount===5) teaseText.style.opacity=1;
+};
+
+/* Envelope typing */
+const letterMsg=`You're the best thing I've ever found on the internet.
+
+Suddenly all those recharges were worth it 😝`;
+let typed=false;
+envelopeWrap.onclick=()=>{
+  if(typed) return;
+  seal.classList.add("open");
+  letter.classList.add("show");
+  let i=0; letterText.textContent="";
+  const t=setInterval(()=>{
+    letterText.textContent+=letterMsg[i++];
+    if(i>=letterMsg.length){clearInterval(t);typed=true;}
+  },55);
+};
+
+/* Popup typing */
+function typePopup(text){
+  popupText.textContent="";
+  let i=0;
+  const t=setInterval(()=>{
+    popupText.textContent+=text[i++];
+    if(i>=text.length) clearInterval(t);
+  },40);
+}
+
+/* YES */
+yesBtn.onclick=()=>{
+  popup.style.display="flex";
+  typePopup(
+`Knew you would say yes, Whenever I’m with you, I’m home.
+You give my heart so much peace.
+I’m sending you all my love today.
+Thanks for being you.
+Happy Valentine’s Day; I love you`
+  );
+  closePopup.textContent="I love you more";
+  closePopup.onclick=secondPopup;
+  fallEmojis();
+};
+
+function secondPopup(){
+  typePopup(
+`Can't wait to see you, my forever valentine.
+the LOML in person :3333`
+  );
+  closePopup.textContent="Me too";
+  closePopup.onclick=()=>{
+    popup.style.display="none";
+    window.scrollTo({top:0,behavior:"smooth"});
+  };
+}
+
+/* Emoji rain → heart dust */
+function fallEmojis(){
+  const emojis=["🍫","🧸","💖","❤️"];
+  const stack=[];
+  for(let i=0;i<120;i++){
+    const e=document.createElement("div");
+    e.className="fall";
+    e.textContent=emojis[Math.floor(Math.random()*emojis.length)];
+    e.style.left=Math.random()*100+"vw";
+    e.style.animationDuration=4+Math.random()*3+"s";
+    document.body.appendChild(e);
+    stack.push(e);
+    setTimeout(()=>{
+      e.style.top="auto";
+      e.style.bottom=Math.random()*25+"px";
+    },5500);
+  }
+  setTimeout(()=>{
+    stack.forEach(el=>{
+      const r=el.getBoundingClientRect();
+      el.remove();
+      for(let i=0;i<3;i++){
+        const d=document.createElement("div");
+        d.className="dust";
+        d.textContent="💗";
+        d.style.left=r.left+Math.random()*12+"px";
+        d.style.bottom="0px";
+        document.body.appendChild(d);
+        setTimeout(()=>d.remove(),2500);
+      }
+    });
+  },10000);
+}
+
+/* Scratch card (mobile + PC) */
+const scratchCanvas = document.getElementById("scratchCanvas");
+let scratchCtx = scratchCanvas.getContext("2d", { willReadFrequently: true });
+
+function resizeScratch(){
+  const rect = scratchCanvas.getBoundingClientRect();
+  const dpr = Math.max(1, window.devicePixelRatio || 1);
+  scratchCanvas.width = Math.floor(rect.width * dpr);
+  scratchCanvas.height = Math.floor(rect.height * dpr);
+  scratchCtx = scratchCanvas.getContext("2d", { willReadFrequently: true });
+  scratchCtx.scale(dpr, dpr);
+  drawScratchCover();
+}
+function drawScratchCover(){
+  const rect = scratchCanvas.getBoundingClientRect();
+  const w = rect.width, h = rect.height;
+
+  scratchCtx.globalCompositeOperation = "source-over";
+  const g = scratchCtx.createLinearGradient(0,0,w,h);
+  g.addColorStop(0, "#d8d8d8");
+  g.addColorStop(0.5, "#bfbfbf");
+  g.addColorStop(1, "#e6e6e6");
+  scratchCtx.fillStyle = g;
+  scratchCtx.fillRect(0,0,w,h);
+
+  scratchCtx.globalAlpha = 0.18;
+  scratchCtx.fillStyle = "#ffffff";
+  for(let i=-h;i<w+h;i+=18){
+    scratchCtx.save();
+    scratchCtx.translate(i,0);
+    scratchCtx.rotate(-Math.PI/8);
+    scratchCtx.fillRect(0,0,10,h*2);
+    scratchCtx.restore();
+  }
+  scratchCtx.globalAlpha = 1;
+
+  scratchCtx.fillStyle = "rgba(0,0,0,.35)";
+  scratchCtx.font = "16px Coolvetica, -apple-system, BlinkMacSystemFont, sans-serif";
+  scratchCtx.textAlign = "center";
+  scratchCtx.fillText("Scratch me ✨", w/2, h/2 + 6);
+}
+
+let isScratching = false;
+let revealed = false;
+
+function getPos(e){
+  const rect = scratchCanvas.getBoundingClientRect();
+  const p = (e.touches && e.touches[0]) ? e.touches[0] : e;
+  return { x: p.clientX - rect.left, y: p.clientY - rect.top };
+}
+
+function scratchAt(x,y){
+  const rect = scratchCanvas.getBoundingClientRect();
+  scratchCtx.globalCompositeOperation = "destination-out";
+  scratchCtx.beginPath();
+  scratchCtx.arc(x, y, Math.max(16, rect.width * 0.055), 0, Math.PI*2);
+  scratchCtx.fill();
+  scratchCtx.closePath();
+}
+
+function percentScratched(){
+  const rect = scratchCanvas.getBoundingClientRect();
+  const img = scratchCtx.getImageData(0,0,rect.width,rect.height).data;
+  let clear = 0;
+  for(let i=3;i<img.length;i+=4){
+    if(img[i] === 0) clear++;
+  }
+  return clear / (img.length/4);
+}
+
+function sparklesBurst(){
+  const emojis = ["✨","💖","✦","✧","💗"];
+  for(let i=0;i<26;i++){
+    const s = document.createElement("div");
+    s.className="sparkle";
+    s.textContent = emojis[Math.floor(Math.random()*emojis.length)];
+    s.style.left = (Math.random()*90 + 5) + "vw";
+    s.style.top = (Math.random()*40 + 25) + "vh";
+    document.body.appendChild(s);
+    setTimeout(()=>s.remove(), 1400);
+  }
+}
+
+function finishScratch(){
+  if(revealed) return;
+  revealed = true;
+
+  scratchCanvas.style.transition = "opacity .7s ease";
+  scratchCanvas.style.opacity = "0";
+  setTimeout(()=>{ scratchCanvas.style.display="none"; }, 750);
+
+  sparklesBurst();
+}
+
+function startScratch(e){
+  if(revealed) return;
+  isScratching = true;
+  e.preventDefault?.();
+  const {x,y} = getPos(e);
+  scratchAt(x,y);
+}
+function moveScratch(e){
+  if(!isScratching || revealed) return;
+  e.preventDefault?.();
+  const {x,y} = getPos(e);
+  scratchAt(x,y);
+
+  if(Math.random() < 0.08){
+    if(percentScratched() > 0.45) finishScratch();
+  }
+}
+function endScratch(){
+  if(!isScratching || revealed) return;
+  isScratching = false;
+  if(percentScratched() > 0.45) finishScratch();
+}
+
+scratchCanvas.addEventListener("mousedown", startScratch);
+window.addEventListener("mousemove", moveScratch);
+window.addEventListener("mouseup", endScratch);
+
+scratchCanvas.addEventListener("touchstart", startScratch, {passive:false});
+scratchCanvas.addEventListener("touchmove", moveScratch, {passive:false});
+scratchCanvas.addEventListener("touchend", endScratch);
+
+window.addEventListener("resize", resizeScratch);
+setTimeout(resizeScratch, 50);
+
+/* Doodles randomize + scroll shift */
+const doodleContainer = document.getElementById("doodles");
+const doodleChars = ["✦","✧","♡","★","✿","☁"];
+const doodleClasses = ["d1","d2","d3","d4","d5","d6"];
+const doodles = [];
+
+function random(min, max){ return Math.random()*(max-min)+min; }
+
+function createDoodles(){
+  doodleContainer.innerHTML = "";
+  doodles.length = 0;
+
+  const count = 13;
+
+  for(let i=0;i<count;i++){
+    const d = document.createElement("div");
+    d.className = `doodle ${doodleClasses[Math.floor(Math.random()*doodleClasses.length)]}`;
+    d.textContent = doodleChars[Math.floor(Math.random()*doodleChars.length)];
+
+    const top = random(4, 92);
+    const left = random(4, 92);
+
+    d.style.top = top + "%";
+    d.style.left = left + "%";
+
+    d.style.fontSize = random(22, 44) + "px";
+    d.style.animationDuration = random(4.5, 7.5) + "s";
+
+    d.dataset.baseTop = top;
+    d.dataset.baseLeft = left;
+
+    doodleContainer.appendChild(d);
+    doodles.push(d);
+  }
+}
+
+createDoodles();
+
+window.addEventListener("scroll", ()=>{
+  const y = window.scrollY || 0;
+
+  doodles.forEach((d, i)=>{
+    const baseTop = parseFloat(d.dataset.baseTop);
+    const baseLeft = parseFloat(d.dataset.baseLeft);
+
+    const shiftY = (y * 0.003) * ((i%2===0) ? 1 : -1);
+    const shiftX = (y * 0.0015) * ((i%3===0) ? 1 : -1);
+
+    d.style.top = (baseTop + shiftY) + "%";
+    d.style.left = (baseLeft + shiftX) + "%";
+  });
+},{passive:true});
+
+/* Floating hearts only while voice note is playing */
+const voiceAudio = document.querySelector("#voiceNote audio");
+const audioHearts = document.getElementById("audioHearts");
+
+let heartInterval = null;
+
+function spawnAudioHeart(){
+  const h = document.createElement("div");
+  h.className = "audio-heart";
+  h.textContent = Math.random() < 0.5 ? "💗" : "💖";
+
+  h.style.left = (Math.random()*92 + 4) + "vw";
+  h.style.fontSize = (12 + Math.random()*10) + "px";
+  h.style.animationDuration = (4 + Math.random()*3) + "s";
+
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(), 8000);
+}
+
+voiceAudio.addEventListener("play", ()=>{
+  if(heartInterval) return;
+  heartInterval = setInterval(spawnAudioHeart, 280);
+});
+
+function stopHearts(){
+  clearInterval(heartInterval);
+  heartInterval = null;
+}
+
+voiceAudio.addEventListener("pause", stopHearts);
+voiceAudio.addEventListener("ended", stopHearts);
+</script>
+
+</body>
+</html>
